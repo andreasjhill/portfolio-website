@@ -7,18 +7,54 @@
     <title>Andréas JD Hill</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mediaqueries.css">
-    
+    <style>
+        #desktop-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: transparent;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            height: 10vh; /* Initial height */
+        }
+        #desktop-nav.scrolled {
+            background-color: #FAF9F6;
+            padding: 10px 0;
+            height: 4vh; /* Reduced height when scrolled */
+        }
+        #desktop-nav.scrolled .logo a,
+        #desktop-nav.scrolled .nav-links a {
+            font-size: 0.8em;
+        }
+        body {
+            padding-top: 17vh;
+        }
+        #particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: calc(100vh + 17vh); /* Cover nav and profile */
+            z-index: -1;
+            pointer-events: none;
+        }
+        #profile {
+            position: relative;
+            overflow: hidden;
+            height: 100vh; /* Ensure profile takes full viewport height */
+        }
+    </style>
 </head>
 <body>
     <nav id="desktop-nav">
-        <div class="logo">Andréas JD Hill</div>
+        <div class="logo"><a href="#" style="font-size: 0.8em; font-weight: 300;">Home</a></div>
         <div>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li><li>
-                <a href="#experience">Experience</a></li>
-                <li><a href="#travel">Travel</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about" style="font-size: 0.9em; font-weight: 300;">About</a></li>
+                <li><a href="#experience" style="font-size: 0.9em; font-weight: 300;">Experience</a></li>
+                <li><a href="#projects" style="font-size: 0.9em; font-weight: 300;">Projects</a></li>
+                <li><a href="#contact" style="font-size: 0.9em; font-weight: 300;">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -31,30 +67,22 @@
                 <span></span>
             </div>
             <div class="menu-links">
+                <li><a href="#profile" onclick="togglemenu()">Home</a></li>
                 <li><a href="#about" onclick="togglemenu()">About</a></li>
                 <li><a href="#projects" onclick="togglemenu()">Projects</a></li>
                 <li><a href="#experience" onclick="togglemenu()">Experience</a></li>
-                <li><a href="#travel" onclick="togglemenu()">Travel</a></li>
                 <li><a href="#contact" onclick="togglemenu()">Contact</a></li>
             </div>
         </div> 
     </nav>
+    <div id="particles-js"></div>
     <section id="profile">
-        <div class="section__text">
-            <p class="section__text__p1">Hello, I'm</p>
-            <h1 class="title">Andreas Hill</h1>
-            <p class="section__text__p2">Data & Research Analyst</p>
-            <div class="btn-container">
-                <button 
-                    class="btn btn-color-2" 
-                    onclick="window.open('./assets/resume.pdf')"
-                >
-                    Download CV
-                </button>
-                <button class="btn btn-color-1" onclick="location.href='./#Contact'">
-                    Contact Info
-                </button>
-            </div>
+        <div class="textlanding">
+            <h1 class="name">
+                <span class="name-part">ANDRÉAS J.D. HILL </span>
+            </h1>
+            <hr class="name-underline">
+            <br>
             <div id="socials-container">
                 <img src="./assets/linkedin.png" 
                      alt="My LinkedIn Profile"
@@ -67,32 +95,329 @@
                      onclick="location.href='https://github.com/andreasjhill/'"
                 />
             </div>
+        <div class="arrow">
+            <img src="./assets/arrow.png" alt="Arrow icon" onclick="location.href='#about'" style="width: 100px; height: auto;">
+        </div>
+            <p class="profile-description">👋 Hi! I'm a <b>data & research Analyst</b> dedicated to transforming data into compelling <b>visual stories</b>. I thrive on uncovering meaningful insights from intricate datasets. ❤️</p>
+            <p class="profile-description">If you like this website, thanks! I coded it myself. 😊</p>
+            <div class="btn-container">
+                <a class="btn btn-color-2" href="./assets/resume.pdf" target="_blank">Download CV</a>
+                <a class="btn btn-color-1" href="#contact">Contact Info</a>
+            </div>
         </div>
     </section>
-    <hr class="section-divider">
     <section id="about">
+        <br>
+        <br>
+        <br>
+        <br>
         <p class="section__text__p1">Get To Know More</p>
-        <h1 class="title">About me</h1>
+        <h1 class="title">About Me</h1>
         <div class="section-container">
-            <div class="section__pic-container">
-                <img 
-                src="./assets/profile-pic.png" 
-                alt="Profile picture"
-                class="about-pic" 
+          <div class="section__pic-container">
+            <img
+              src="./assets/profile-pic.png"
+              alt="Profile picture"
+              class="about-pic"
+            />
+          </div>
+          <div class="about-details-container">
+            <div class="about-containers">
+              <div class="details-container">
+                <img
+                  src="./assets/experience.png"
+                  alt="Experience icon"
+                  class="icon"
                 />
+                <h3>Experience</h3>
+                <p>2+ years <br />Data Analysis</p>
+              </div>
+              <div class="details-container">
+                <img
+                  src="./assets/education.png"
+                  alt="Education icon"
+                  class="icon"
+                />
+                <h3>Education</h3>
+                <p>Honours BA Political Science<br/>Data Analytics Certificate</p>
+              </div>
             </div>
-            <div class="about-details-container">
-                <div class="about-containers">
-                    <div class="details-container">
-                        <img src="./assets/experience.png " 
-                        alt="Experience icon"
-                        class="icon"
-                        />
-                    </div>
-                </div>
+            <div class="text-container">
+              <p>
+                Hi I'm Andreas.
+              </p>
+              <br>
+              <p>
+                I specialize in helping companies analyze and visualize their datasets. I excel in <b>data visualization</b>. My expertise spans legal research, policy analysis, and advanced data modelling.
+            </p>
+            <br>
+            <p>
+                I have honed my skills in various industries, including financial services at <b>Mandeville Private Client</b> and legal services at <b>HillCowan Legal Services</b>.
+            </p>
             </div>
+            </div>
+          </div>
+          <div class="about-buttons">
+            <a href="https://x.com/andreasjhill" target="_blank" class="about-btn">Twitter</a>
+            <a href="https://github.com/andreasjhill/" target="_blank" class="about-btn">Github</a>
+            <a href="https://www.linkedin.com/in/andreas-jd-hill/" target="_blank" class="about-btn">LinkedIn</a>
+
         </div>
     </section>
-    <script src="script.js"></script>
+    <section id="experience">
+      <p class="section__text__p1">Explore My</p>
+      <h1 class="title">Experience</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container">
+            <h2 class="experience-sub-title">Data Analysis</h2>
+            <div class="article-container">
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Python</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>PostgreSQL</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>ML: AI</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Excel</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Web Scraping</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>VBA</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="details-container">
+            <h2 class="experience-sub-title">Data Visualization</h2>
+            <div class="article-container">
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Tableau</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Chart.js</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Power BI</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Plotly</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </section>
+    <section id="projects">
+    <p class="section__text__p1">Browse My Recent</p>
+    <h1 class="title">Projects</h1>
+    <div class="experience-details-container">
+      <div class="about-containers">
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img
+              src="./assets/project-1.png"
+              alt="Project 1"
+              class="project-img"
+            />
+          </div>
+          <h2 class="experience-sub-title project-title">Project One</h2>
+          <div class="btn-container">
+            <button
+              class="btn btn-color-2 project-btn"
+              onclick="location.href='https://github.com/'"
+            >
+              Github
+            </button>
+            <button
+              class="btn btn-color-2 project-btn"
+              onclick="location.href='https://github.com/'"
+            >
+              Interact
+            </button>
+          </div>
+        </div>
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img
+              src="./assets/project-2.png"
+              alt="Project 2"
+              class="project-img"
+            />
+          </div>
+          <h2 class="experience-sub-title project-title">Project Two</h2>
+          <div class="btn-container">
+            <button
+              class="btn btn-color-2 project-btn"
+              onclick="location.href='https://github.com/'"
+            >
+              Github
+            </button>
+            <button
+              class="btn btn-color-2 project-btn"
+              onclick="location.href='https://github.com/'"
+            >
+              Interact
+            </button>
+          </div>
+        </div>
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img
+              src="./assets/project-3.png"
+              alt="Project 3"
+              class="project-img"
+            />
+          </div>
+          <h2 class="experience-sub-title project-title">Project Three</h2>
+          <div class="btn-container">
+            <button
+              class="btn btn-color-2 project-btn"
+              onclick="location.href='https://github.com/'"
+            >
+              Github
+            </button>
+            <button
+              class="btn btn-color-2 project-btn"
+              onclick="location.href='https://github.com/'"
+            >
+              Interact
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+    <section id="contact">
+        <p class="section__text__p1">Get in Touch</p>
+        <h1 class="title">Contact Me</h1>
+        <div class="contact-info-upper-container">
+          <div class="contact-info-container">
+            <img
+              src="./assets/email.png"
+              alt="Email icon"
+              class="icon contact-icon email-icon"
+            />
+            <p><a href="mailto:andreasjhill@gmail.com">andreasjhill@gmail.com</a></p>
+          </div>
+          <div class="contact-info-container">
+            <img
+              src="./assets/linkedin.png"
+              alt="LinkedIn icon"
+              class="icon contact-icon"
+            />
+            <p><a href="https://www.linkedin.com/in/andreas-jd-hill/">LinkedIn</a></p>
+          </div>
+          <div class="contact-info-container">
+            <img
+              src="./assets/linkedin.png"
+              alt="phone icon"
+              class="icon contact-icon phone-icon"
+            />
+            <p><a href="tel:+19058673438">+1 905 867 3438</a></p>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <p>Copyright &#169; 2024 Andreas Hill. All Rights Reserved.</p>
+      </footer>
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <script src="particles-config.js"></script>
+        <script src="script.js"></script>
+        <script>
+        window.addEventListener('scroll', function() {
+            var nav = document.getElementById('desktop-nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
