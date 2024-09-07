@@ -440,14 +440,6 @@ article .icon {
     cursor: default;
 }
 
-/* Media Query for Narrower Screens */
-@media (max-width: 768px) {
-    .article-container {
-        grid-template-columns: 1fr; /* Change to 1 column on smaller screens */
-        gap: 1.5rem; /* Adjust the gap for smaller screens */
-    }
-}
-
 /* PROJECTS SECTION */
 
 #projects {
@@ -742,3 +734,101 @@ body.swiping-left::after {
   right: 0;
   opacity: 1;
 }
+
+@media screen and (max-width: 768px) {
+  #hamburger-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1002;
+    background-color: transparent; /* Make it transparent by default */
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+  }
+
+  #hamburger-nav.menu-open {
+    background-color: rgba(255, 255, 255, 0.7); /* Apply tint when menu is open */
+  }
+
+  .hamburger-menu {
+    position: relative;
+  }
+
+  .hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1003;
+  }
+
+  .hamburger-icon span {
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .menu-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0 1rem;
+    transition: all 0.3s ease-in-out;
+    transform: translateY(-100%);
+    z-index: 1001;
+  }
+
+  .menu-links.open {
+    transform: translateY(0);
+  }
+
+  .menu-links a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    text-align: center;
+    color: #333;
+    margin: 0.25rem;
+    flex: 0 0 calc(33.333% - 0.5rem);
+    max-width: calc(33.333% - 0.5rem);
+    box-sizing: border-box;
+  }
+
+  #profile {
+    z-index: 1;
+    padding-top: 60px;
+  }
+
+  .hamburger-icon.open {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .hamburger-icon.open span:first-child {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger-icon.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-icon.open span:last-child {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
+
