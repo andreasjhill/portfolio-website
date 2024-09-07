@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 Dashboard</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        #vizContainer {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id='vizContainer'></div>
+
+    <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+    <script type="text/javascript">
+        var divElement = document.getElementById('vizContainer');
+        var vizElement = divElement;
+        var options = {
+            url: 'https://public.tableau.com/views/CovidDashboard2020-2021_17018938810010/Dashboard1',
+            width: '100%',
+            height: '100%',
+            hideTabs: true,
+            hideToolbar: true,
+        };
+        var viz = new tableau.Viz(vizElement, options.url, options);
+    </script>
+</body>
+</html>
