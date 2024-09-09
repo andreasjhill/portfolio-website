@@ -1,4 +1,7 @@
-Andreas J.D. Hill Portfolio
+
+<img width="1300" alt="Screenshot 2024-09-09 at 10 36 58 AM" src="https://github.com/user-attachments/assets/3208c2d0-de6c-47b3-97d7-232e405fa749">
+
+**Andreas J.D. Hill Portfolio**
 
 Welcome to my personal portfolio website! This site showcases my professional background, projects, and skills in data analysis, legal research, and policy analysis.
 
