@@ -644,8 +644,8 @@ article .icon {
 }
 
 .modal-image {
-  width: 40%;
-  height: auto;
+  max-width: 700px;
+  max-height: 300px;
   margin: 20px 0;
   object-fit: contain;
   border-radius: 50px;

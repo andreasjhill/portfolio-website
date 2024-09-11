@@ -27,6 +27,7 @@ function openModal(projectId) {
     modalBody.innerHTML = '';
   
     if (projectId === 'covid-dashboard') {
+        // Existing COVID dashboard code (leave this unchanged)
         modalBody.innerHTML = `
             <div class="modal-content-wrapper">
                 <h2>COVID-19 Dashboard</h2>
@@ -45,8 +46,32 @@ function openModal(projectId) {
                 </div>
             </div>
         `;
+    } else if (projectId === 'spotify-dashboard') {
+        modalBody.innerHTML = `
+            <div class="modal-content-wrapper">
+                <h2>Spotify Daily Top 50</h2>
+                <img src="./assets/heatmap.png" alt="Spotify Dashboard" class="modal-image" onerror="this.onerror=null; this.src='./heatmap.png'; console.log('Error loading image, trying alternate path');">
+        <p>This interactive dashboard visualizes data from Spotify's Daily Top 50 playlist. Python functions are used to collect and process the data using the Spotify API, then placed in a sqlite databse for Tableau to interact with. <b>Script will run until Sept. 30th 2024 adding the latest 50 songs each time.</b></p>
+        <p>Key findings will improve as the script runs:</p>
+        <ul>
+            <li>Songs ranging from 2.8 - 3 minutes in length account for 42.4% of the top 50 indicating a popularity-time efficiency.</li>
+            <li>Songs with higher danceability and energy scores tend to rank higher.</li>
+            <li>Direct corelation between danceability and popularity</li>
+        </ul>
+        <br>
+        <p>Tools used: Python for data collection and processing, SQL for data management, and Tableau for visualization.</p>
+                <div class="modal-buttons">
+                    <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/andreasjhill/TrackTrend', '_blank')">
+                        GitHub
+                    </button>
+                    <button class="btn btn-color-2 project-btn" onclick="window.location.href='spotify-dashboard.html'">
+                        Interact
+                    </button>
+                </div>
+            </div>
+        `;
     }
-  
+
     modal.style.display = 'flex';
     setTimeout(() => {
         modal.classList.add('show');
