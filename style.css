@@ -496,7 +496,7 @@ article .icon {
   }
 
   .project-img {
-    border-radius: 2rem;
+    border-radius: 3rem;
     width: 100%;
     height: 300px;
     object-fit: cover;
