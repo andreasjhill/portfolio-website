@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andréas JD Hill</title>
-    <link rel="icon" type="image/png" href="./assets/logo.png">
+    <link rel="icon" type="image/png" href="./assets/brand_logo.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mediaqueries.css">
     <style>
@@ -48,6 +48,11 @@
     </style>
 </head>
 <body>
+  <header style="position: relative; text-align: center; margin-bottom: 1rem;">
+    <div class="logo-container" style="position: absolute; top: 40px; left: 50%; transform: translateX(-50%);"> <!-- Adjusted top value -->
+        <img src="./assets/brand_logo.png" alt="Andreas J.D. Hill Logo" class="logo" style="width: 150px; height: auto;" />
+    </div>
+</header>
     <nav id="desktop-nav">
         <div class="logo"><a href="#" style="font-size: 0.8em; font-weight: 300;">Home</a></div>
         <div>
@@ -77,35 +82,38 @@
     </nav>
     <div id="particles-js"></div>
     <section id="profile">
-        <div class="textlanding">
-            <h1 class="name">
-                <span class="name-part">ANDRÉAS J.D. HILL </span>
-            </h1>
-            <hr class="name-underline">
-            <br>
-            <div id="socials-container">
-                <img src="./assets/linkedin.png" 
-                     alt="My LinkedIn Profile"
-                     class="icon" 
-                     onclick="location.href='https://www.linkedin.com/in/andreas-jd-hill/'"
-                />
-                <img src="./assets/github.png" 
-                     alt="My Github Profile"
-                     class="icon" 
-                     onclick="location.href='https://github.com/andreasjhill/'"
-                />
-            </div>
-        <div class="arrow">
+      <div class="textlanding" style="margin-top: 10px;"> <!-- Adjust margin to shift down -->
+          <div class="name-container">
+              <h1 class="name">
+                  <span class="name-part">ANDRÉAS J.D. HILL</span>
+              </h1>
+              <hr class="name-underline">
+          </div>
+          <div class="profile-descriptions-container" style="margin-top: 3rem;"> <!-- New container for descriptions -->
+            <p class="profile-description">👋 Hi! I'm a <b>data & research Analyst</b> dedicated to transforming data into compelling <b>visual stories</b>. I thrive on uncovering meaningful insights from intricate datasets. 🔍</p>
+            <p class="profile-description">If you like this website, thanks! I coded it myself.</p>
+        </div>
+          <div id="socials-container">
+              <img src="./assets/linkedin.png" 
+                   alt="My LinkedIn Profile"
+                   class="icon" 
+                   onclick="location.href='https://www.linkedin.com/in/andreas-jd-hill/'"
+              />
+              <img src="./assets/github.png" 
+                   alt="My Github Profile"
+                   class="icon" 
+                   onclick="location.href='https://github.com/andreasjhill/'"
+              />
+          </div>
+          <div class="btn-container">
+              <a class="btn btn-color-2" href="./assets/Sept_Resume.pdf" target="_blank">Download CV</a>
+              <a class="btn btn-color-1" href="#contact">Contact Info</a>
+          </div>
+          <div class="arrow" style="margin-top: 20px;"> <!-- Arrow button container -->
             <img src="./assets/arrow.png" alt="Arrow icon" onclick="location.href='#about'" style="width: 100px; height: auto;">
         </div>
-            <p class="profile-description">👋 Hi! I'm a <b>data & research Analyst</b> dedicated to transforming data into compelling <b>visual stories</b>. I thrive on uncovering meaningful insights from intricate datasets. ❤️</p>
-            <p class="profile-description">If you like this website, thanks! I coded it myself. 😊</p>
-            <div class="btn-container">
-                <a class="btn btn-color-2" href="./assets/Sept_Resume.pdf" target="_blank">Download CV</a>
-                <a class="btn btn-color-1" href="#contact">Contact Info</a>
-            </div>
-        </div>
-    </section>
+      </div>
+  </section>
     <section id="about">
         <br>
         <br>
