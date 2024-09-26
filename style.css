@@ -391,6 +391,7 @@
   display: flex;
   justify-content: center; /* Center the arrow button */
   margin-top: 20px; /* Adjust this value to control spacing above the arrow */
+  cursor: pointer;
 }
 
 /* About Section Buttons */
