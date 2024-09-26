@@ -186,10 +186,10 @@
   section {
     padding-top: 17vh;
     height: 96vh;
-    margin: 0 10rem;
+    margin: 0 5rem; /* Reduce horizontal margins */
     box-sizing: border-box;
     min-height: fit-content;
-  }
+}
   
   .section-container {
     display: flex;
@@ -217,35 +217,45 @@
 }
 
 .textlanding {
-    text-align: center;
-    max-width: 800px;
-    position: relative;
-    z-index: 1;
-    padding: 6rem;
-}
-
-.name {
-    font-size: 35px;
-    margin-bottom: 130px;
+  text-align: center; /* Center the text inside */
+  max-width: 800px; /* Set a max width for larger screens */
+  width: 90%; /* Allow it to take up 90% of the available width */
+  position: relative;
+  z-index: 1;
+  padding: 2rem; /* Adjust padding as needed */
+  margin: 0 auto; /* Center the container */
 }
 
 .name-part {
-    display: inline-block;
-    padding: 0 10px;
+  display: inline-block;
+  margin-top: 20%; /* Reduced margin to lower the name part */
+  flex: auto;
 }
 
 .name-underline {
-    width: 100px;
-    height: 1px;
-    border: none;
-    background-color: #333;
-    margin: 1rem auto;
-    margin-top: -130px;
+  width: 100px;
+  height: 1px;
+  border: none;
+  background-color: #333;
+}
+
+.name-container {
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically if needed */
+  flex-direction: column; /* Stack items vertically */
+  text-align: center; /* Center text */
+  width: 100%; /* Ensure it takes full width */
+}
+
+.name {
+  font-size: 35px;
+  margin-bottom: 100px; /* Reduced margin to lower the name part */
 }
 
 #socials-container {
-  position: absolute; /* Position it absolutely */
-  top: 60px; /* Adjust this value to move it lower on the page */
+  position: absolute; /* Keep it absolutely positioned */
+  top: 190px; /* Adjust this value to move it lower on the page */
   left: 50%;
   transform: translateX(-50%); /* Center it horizontally */
   display: flex;
@@ -259,7 +269,10 @@
 }
 
 .profile-descriptions-container {
-  margin-top: 8rem; /* Increase this value to lower the descriptions further */
+  margin-top: 2rem; /* Set a valid value to lower the descriptions further */
+  width: 100%; /* Set width to 90% to allow more space */
+  max-width: 600px; /* Optional: Set a max width for larger screens */
+  margin: 2rem auto; /* Center it with auto margins */
 }
 
 .profile-description {
@@ -743,7 +756,7 @@ body.swiping-left::after {
   opacity: 1;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
   #hamburger-nav {
     position: fixed;
     top: 0;
@@ -758,6 +771,31 @@ body.swiping-left::after {
     transition: background-color 0.3s ease;
   }
 
+@media screen and (max-width: 1000px) {
+    .profile-descriptions-container {
+        width: 100%; /* Set to 100% to utilize full width */
+        max-width: none; /* Remove max-width constraint on small screens */
+        margin: 0 auto; /* Center it */
+    }
+
+    .profile-description {
+        font-size: 1rem; /* Adjust font size if needed */
+    }
+}
+@media screen and (max-width: 768px) {
+  .textlanding {
+      width: 95%; /* Make it wider on smaller screens */
+      max-width: none; /* Remove max-width constraint on small screens */
+      padding: 1em; /* Further reduce padding on smaller screens */
+  }
+}
+@media screen and (max-width: 768px) {
+  .name-part {
+      margin-top: 30%;
+      mar /* Increase margin-top to lower it on smaller screens */
+      font-size: 1.5rem; /* Optionally adjust font size for smaller screens */
+  }
+}
   #hamburger-nav.menu-open {
     background-color: rgba(255, 255, 255, 0.7); /* Apply tint when menu is open */
   }
